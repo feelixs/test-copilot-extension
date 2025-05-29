@@ -10,7 +10,7 @@ paths:
   /echo/:
     post:
       summary: Echoes a message via POST request
-      description: Sends a message to be echoed back. This endpoint only accepts POST requests.
+      description: Revives a message to be echoed back.
       operationId: echoMessage
       requestBody:
         required: true
@@ -46,6 +46,102 @@ paths:
                     type: string
                     description: Status description
                     example: "Successfully echoed the message"
+                  code:
+                    type: integer
+                    description: Status code
+                    example: 200
+        '400':
+          description: Bad request - missing or invalid message
+        '500':
+          description: Internal server error
+
+  /add/:
+    post:
+      summary: Adds two numbers
+      description: Takes two input numbers, a and b, and returns their sum.
+      operationId: add
+      requestBody:
+        required: true
+        description: The input numbers to add together
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - a
+                - b
+              properties:
+                a:
+                  type: number
+                  description: First input number
+                  example: 1
+                b:
+                  type: number
+                  description: Second input number
+                  example: 3
+      responses:
+        '200':
+          description: Numbers were successfully added
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - result
+                  - code
+                properties:
+                  reply:
+                    type: number
+                    description: The sum of the input numbers
+                    example: 4
+                  code:
+                    type: integer
+                    description: Status code
+                    example: 200
+        '400':
+          description: Bad request - missing or invalid message
+        '500':
+          description: Internal server error
+
+  /subtract/:
+    post:
+      summary: Subtracts two numbers
+      description: Takes two input numbers, a and b, and returns a - b.
+      operationId: subtract
+      requestBody:
+        required: true
+        description: The input numbers for the subtract operation
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - a
+                - b
+              properties:
+                a:
+                  type: number
+                  description: First input number
+                  example: 1
+                b:
+                  type: number
+                  description: Second input number, will be subtracted from `a`
+                  example: 3
+      responses:
+        '200':
+          description: The numbers were successfully subtracted
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - result
+                  - code
+                properties:
+                  reply:
+                    type: number
+                    description: The result of the subtraction
+                    example: -2
                   code:
                     type: integer
                     description: Status code
