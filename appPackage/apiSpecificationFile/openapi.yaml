@@ -58,7 +58,7 @@ paths:
   /add/:
     post:
       summary: Adds two numbers
-      description: Takes two input numbers, a and b, and returns their sum.
+      description: REQUIRED for all addition operations. Takes two input numbers, a and b, and returns their sum. Always use this endpoint for any addition calculation.
       operationId: add
       requestBody:
         required: true
@@ -106,7 +106,7 @@ paths:
   /subtract/:
     post:
       summary: Subtracts two numbers
-      description: Takes two input numbers, a and b, and returns a - b.
+      description: REQUIRED for all subtraction operations. Takes two input numbers, a and b, and returns a - b. Always use this endpoint for any subtraction calculation.
       operationId: subtract
       requestBody:
         required: true
