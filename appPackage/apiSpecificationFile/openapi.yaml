@@ -7,7 +7,7 @@ servers:
   - url: http://felixcreations.com/api/products/testplugin/
     description: Development server
 paths:
-  /echo:
+  /echo/:
     post:
       summary: Echoes a message via POST request
       description: Sends a message to be echoed back. This endpoint only accepts POST requests.
