@@ -2,30 +2,45 @@ openapi: "3.0.0"
 info:
   title: Echo Plugin
   version: "1.0"
+  description: Echo Plugin API that accepts POST requests to echo messages
 servers:
   - url: http://felixcreations.com/api/products/testplugin/
     description: Development server
 paths:
   /echo:
     post:
-      summary: Echoes a message
+      summary: Echoes a message via POST request
+      description: Sends a message to be echoed back. This endpoint only accepts POST requests.
       operationId: echoMessage
       requestBody:
         required: true
+        description: Message to be echoed
         content:
           application/json:
             schema:
               type: object
+              required:
+                - message
               properties:
                 message:
                   type: string
+                  description: The message to echo back
+                  example: "Hello, world!"
       responses:
         '200':
-          description: OK
+          description: Successfully echoed the message
           content:
             application/json:
               schema:
                 type: object
+                required:
+                  - reply
                 properties:
                   reply:
                     type: string
+                    description: The echoed message
+                    example: "Hello, world!"
+        '400':
+          description: Bad request - missing or invalid message
+        '500':
+          description: Internal server error

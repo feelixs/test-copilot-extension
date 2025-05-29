@@ -16,7 +16,7 @@
     "functions": [
         {
             "name": "echoMessage",
-            "description": "Echoes a message",
+            "description": "Echoes a message by sending a POST request with the message in the request body",
             "capabilities": {
                 "response_semantics": {
                     "data_path": "$",
