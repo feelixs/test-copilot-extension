@@ -90,7 +90,7 @@ paths:
                   - result
                   - code
                 properties:
-                  reply:
+                  result:
                     type: number
                     description: The sum of the input numbers
                     example: 4
@@ -138,7 +138,7 @@ paths:
                   - result
                   - code
                 properties:
-                  reply:
+                  result:
                     type: number
                     description: The result of the subtraction
                     example: -2
