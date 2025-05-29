@@ -1,0 +1,31 @@
+openapi: "3.0.0"
+info:
+  title: Echo Plugin
+  version: "1.0"
+servers:
+  - url: http://felixcreations.com/api/products/testplugin/
+    description: Development server
+paths:
+  /echo:
+    post:
+      summary: Echoes a message
+      operationId: echoMessage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reply:
+                    type: string

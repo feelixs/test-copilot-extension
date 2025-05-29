@@ -1,0 +1,15 @@
+.idea/
+.vscode/
+
+# TeamsFx files
+env/.env.*.user
+env/.env.local
+*.localConfigs
+appPackage/build
+
+# misc
+*.env
+*.dev
+*.user
+*.deployment
+*.DS_Store
