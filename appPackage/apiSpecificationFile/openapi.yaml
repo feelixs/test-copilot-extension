@@ -4,7 +4,7 @@ info:
   version: "1.0"
   description: Echo Plugin API that accepts POST requests to echo messages
 servers:
-  - url: http://felixcreations.com/api/products/testplugin/
+  - url: https://felixcreations.com/api/products/testplugin/
     description: Development server
 paths:
   /echo/:
@@ -35,11 +35,21 @@ paths:
                 type: object
                 required:
                   - reply
+                  - description
+                  - code
                 properties:
                   reply:
                     type: string
                     description: The echoed message
                     example: "Hello, world!"
+                  description:
+                    type: string
+                    description: Status description
+                    example: "Successfully echoed the message"
+                  code:
+                    type: integer
+                    description: Status code
+                    example: 200
         '400':
           description: Bad request - missing or invalid message
         '500':
