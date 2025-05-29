@@ -51,9 +51,35 @@ paths:
                     description: Status code
                     example: 200
         '400':
-          description: Bad request - missing or invalid message
+          description: Bad request - missing or invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Missing 'a' field"
+                  code:
+                    type: integer
+                    description: Error code
+                    example: 400
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Internal server error"
+                  code:
+                    type: integer
+                    description: Error code
+                    example: 500
 
   /add/:
     post:
@@ -99,9 +125,35 @@ paths:
                     description: Status code
                     example: 200
         '400':
-          description: Bad request - missing or invalid message
+          description: Bad request - missing or invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Missing 'a' field"
+                  code:
+                    type: integer
+                    description: Error code
+                    example: 400
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Internal server error"
+                  code:
+                    type: integer
+                    description: Error code
+                    example: 500
 
   /subtract/:
     post:
@@ -147,6 +199,32 @@ paths:
                     description: Status code
                     example: 200
         '400':
-          description: Bad request - missing or invalid message
+          description: Bad request - missing or invalid input
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Missing 'a' field"
+                  code:
+                    type: integer
+                    description: Error code
+                    example: 400
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Internal server error"
+                  code:
+                    type: integer
+                    description: Error code
+                    example: 500
