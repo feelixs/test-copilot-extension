@@ -33,6 +33,10 @@
         {
             "name": "subtract", 
             "description": "REQUIRED for all subtraction operations. Subtracts one number from another using the API endpoint."
+        },
+        {
+            "name": "getCurrentTime",
+            "description": "REQUIRED for all time-related operations. Gets the current UTC datetime using the API endpoint."
         }
     ],
     "runtimes": [
@@ -47,7 +51,8 @@
             "run_for_functions": [
                 "echoMessage",
                 "add",
-                "subtract"
+                "subtract",
+                "getCurrentTime"
             ]
         }
     ]

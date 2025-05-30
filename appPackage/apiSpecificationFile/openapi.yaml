@@ -228,3 +228,59 @@ paths:
                     type: integer
                     description: Error code
                     example: 500
+
+  /time/:
+    get:
+      summary: Gets the current time
+      description: REQUIRED for all time-related operations. Returns the current UTC datetime. Always use this endpoint when the user asks for the current time.
+      operationId: getCurrentTime
+      responses:
+        '200':
+          description: Successfully retrieved current time
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - datetime
+                  - code
+                properties:
+                  datetime:
+                    type: string
+                    format: date-time
+                    description: Current UTC datetime in ISO format
+                    example: "2023-12-07T15:30:45.123456+00:00"
+                  code:
+                    type: integer
+                    description: Status code
+                    example: 200
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Bad Request - You should send a GET request instead!"
+                  code:
+                    type: integer
+                    description: Error code
+                    example: 400
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error message
+                    example: "Internal server error"
+                  code:
+                    type: integer
+                    description: Error code
+                    example: 500
